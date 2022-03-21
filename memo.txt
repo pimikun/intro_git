@@ -1,0 +1,13 @@
+ステージングへ追加
+git add
+ローカルリポジトリへのコミット
+git commit
+
+git status
+git log
+
+ファイルの変更差分
+ステージングとの差分
+git diff
+ステージングとコミットの差分
+git diff head
