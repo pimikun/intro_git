@@ -1,13 +1,55 @@
-ステージングへ追加
-git add
-ローカルリポジトリへのコミット
+ワーキングツリー[working tree]：			最新のファイルの状態
+インデックス[index]（ステージ[stage]）：	コミットするためのファイルの状態
+ローカルリポジトリ[local repository]：		ファイルの変更履歴を記録（手元で管理）
+	ヘッド[HEAD]：最新のコミットの状態
+リモートリポジトリ[remote repository]：		ファイルの変更履歴を記録（みんなで共有）
+------------------------------------------------------------------------------------
+
+git add .
+git add ファイル名
+・git add は、作業ディレクトリ内の変更をステージングエリアに追加するコマンド（git rmの逆）
+・実際には git add コマンドだけではリポジトリに何も影響しません。git commit コマンドを実行するまで、変更が実際に記録されることはありません。
+
 git commit
+・ステージングからローカルリポジトリへのコミット
 
 git status
-git log
+・git add されているけどまだ git commit されていないファイルの一覧
+・編集・変更・削除されているが、まだ git add されていないファイルの一覧
+・Git管理されていない、かつ .gitignore で管理除外対象にもされていないものの一覧
 
-ファイルの変更差分
-ステージングとの差分
+git log
+・コミット時のログを表示
+
+git rm ファイル名
+git rm -r ディレクトリ名
+・ステージングインデックスと作業ディレクトリの両方からファイルを削除できます。
+
 git diff
-ステージングとコミットの差分
-git diff head
+・ステージングとのファイルの差分
+
+git diff --staged
+・ステージングとコミットの差分
+
+git diff HEAD
+・ステージングとコミットの差分
+・ステージングとローカルの差分
+
+git remote add origin https://github.com/pimikun/intro_git
+リモートリポジトリ（GitHub）へ登録（リポジトリURL：GitHub⇒your profile⇒RepositoriesのURL）
+※今後はoriginという名前でGitHubリポジトリへアクセスできる
+
+git push origin master
+リモートリポジトリへpush
+
+git push origin feature
+リモートリポジトリ（ブランチ）へpush
+
+管理したくないファイル
+.gitignore（無視）
+ 自動生成ファイルやパスワードファイル
+ 
+
+GitHubについて
+Raw：生ファイル
+Blame：誰がどのファイルを修正したか
